@@ -6,7 +6,7 @@ function App() {
   return (
     <div>
       <h1>Web Services List</h1>
-      <List baslik = "Liste Oluşturuldu"/>
+      <List baslik = "İl Listeleme"/>
     </div>
   );
 }
