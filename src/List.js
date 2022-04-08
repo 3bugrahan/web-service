@@ -41,7 +41,6 @@ export default function List({baslik}) {
     <h3>{baslik}</h3>
     {item}
     <button onClick={webService}>Getir</button>
-
     </>
   )
 }
