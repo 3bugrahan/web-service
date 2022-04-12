@@ -11,7 +11,6 @@ import 'primeflex/primeflex.css';
 export default function List({ baslik}) {
 
   const [list, setList] = useState([]);
-  const [item, setItem] = useState([]);
 
   const webService = async () =>  {
     const config = {
@@ -19,18 +18,17 @@ export default function List({ baslik}) {
     };
     const response = await axios.post("http://38.242.218.44:3000/global", { "ms": "mvt", "cmd": "il/findAll", "payload": {} }, config);
     setList(response.data)
-    setItem(list)
     
-    console.log(list);
+    
+    console.log(response.data);
   }
-    
 
   return (
     <>
       <h3>{baslik}</h3>
       
       <div>
-            <DataTable value={item} responsiveLayout="scroll">
+            <DataTable value={list} responsiveLayout="scroll">
               <Column field="bolgeId" header="Bölge Id"></Column>
               <Column field="kodu" header="Kodu"></Column>
               <Column field="adi" header="Şehir Adı"></Column>
